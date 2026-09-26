@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ruta del Río · Inscripción a excursiones en canoa</title>
+
+  <!-- Bootstrap 5 y fuentes -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+
+<body>
+
+  <!-- ==================== ENCABEZADO ==================== -->
+  <header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#">Ruta del Río</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#inscripcion">Inscripción</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ==================== CUERPO ==================== -->
+  <main>
+    <section class="hero">
+      <div class="container">
+        <h1>Reserva tu lugar en la canoa</h1>
+        <p>Recorridos guiados por el río Magdalena y sus ciénagas, saliendo de Magangué. Completa el formulario y te confirmamos por correo.</p>
+      </div>
+      <svg viewBox="0 0 1440 70" preserveAspectRatio="none" aria-hidden="true">
+        <path fill="#e6f1f0" d="M0,40 C240,80 480,0 720,30 C960,60 1200,10 1440,40 L1440,70 L0,70 Z"/>
+      </svg>
+    </section>
+
+    <section class="container" id="inscripcion">
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-10 col-xl-8">
+
+          <div class="card form-card">
+            <div class="card-body p-4 p-md-5">
+              <h2 class="h3 mb-1">Formulario de inscripción</h2>
+              <p class="mb-4">Los campos marcados con * son obligatorios.</p>
+
+              <form id="formInscripcion" class="needs-validation" novalidate>
+
+                <!-- Datos personales -->
+                <fieldset class="mb-4">
+                  <legend>Tus datos</legend>
+                  <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                      <label for="nombre" class="form-label">Nombres *</label>
+                      <input type="text" class="form-control" id="nombre" name="nombre"
+                             placeholder="Ej: Elkin" required minlength="2"
+                             pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{2,}" autocomplete="given-name">
+                      <div class="invalid-feedback">Escribe tu nombre usando solo letras.</div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label for="apellido" class="form-label">Apellidos *</label>
+                      <input type="text" class="form-control" id="apellido" name="apellido"
+                             required minlength="2"
+                             pattern="[A-Za-zÁÉÍÓÚáéíóúÑñÜü ]{2,}" autocomplete="family-name">
+                      <div class="invalid-feedback">Escribe tus apellidos usando solo letras.</div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label for="correo" class="form-label">Correo electrónico *</label>
+                      <input type="email" class="form-control" id="correo" name="correo"
+                             placeholder="nombre@correo.com" required autocomplete="email">
+                      <div class="invalid-feedback">Ingresa un correo válido, por ejemplo nombre@correo.com.</div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label for="telefono" class="form-label">Celular *</label>
+                      <input type="tel" class="form-control" id="telefono" name="telefono"
+                             placeholder="3001234567" required pattern="3[0-9]{9}" inputmode="numeric"
+                             autocomplete="tel">
+                      <div class="invalid-feedback">Ingresa 10 dígitos que empiecen por 3.</div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label for="nacimiento" class="form-label">Fecha de nacimiento *</label>
+                      <input type="date" class="form-control" id="nacimiento" name="nacimiento"
+                             required max="2010-12-31">
+                      <div class="invalid-feedback">Indica tu fecha de nacimiento (se requiere ser mayor de 15 años).</div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label for="ciudad" class="form-label">Ciudad de origen *</label>
+                      <select class="form-select" id="ciudad" name="ciudad" required>
+                        <option value="" selected disabled>Selecciona una opción</option>
+                        <option>Magangué</option>
+                        <option>Cartagena</option>
+                        <option>Barranquilla</option>
+                        <option>Mompox</option>
+                        <option>Sincelejo</option>
+                        <option>Otra</option>
+                      </select>
+                      <div class="invalid-feedback">Selecciona tu ciudad.</div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <!-- Detalles de la excursión -->
+                <fieldset class="mb-4">
+                  <legend>Tu excursión</legend>
+                  <div class="row g-3">
+                    <div class="col-12 col-md-6">
+                      <label for="fecha" class="form-label">Fecha deseada *</label>
+                      <input type="date" class="form-control" id="fecha" name="fecha" required>
+                      <div class="invalid-feedback">Elige la fecha en que quieres salir.</div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                      <label for="recorrido" class="form-label">Recorrido *</label>
+                      <select class="form-select" id="recorrido" name="recorrido" required>
+                        <option value="" selected disabled>Selecciona un recorrido</option>
+                        <option value="amanecer">Amanecer en el río (3 h)</option>
+                        <option value="cienaga">Ciénaga y aves (5 h)</option>
+                        <option value="atardecer">Atardecer con cena (4 h)</option>
+                      </select>
+                      <div class="invalid-feedback">Selecciona un recorrido.</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="personas" class="form-label">
+                        Número de personas: <span id="personasValor">2</span>
+                      </label>
+                      <input type="range" class="form-range" id="personas" name="personas" min="1" max="10" value="2">
+                    </div>
+
+                    <!-- Radio -->
+                    <div class="col-12 col-md-6">
+                      <span class="form-label d-block" id="lblExp">Experiencia remando *</span>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="experiencia" id="expNinguna" value="ninguna" required>
+                        <label class="form-check-label" for="expNinguna">Ninguna</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="experiencia" id="expBasica" value="basica">
+                        <label class="form-check-label" for="expBasica">Básica</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="experiencia" id="expAvanzada" value="avanzada">
+                        <label class="form-check-label" for="expAvanzada">Avanzada</label>
+                        <div class="invalid-feedback">Elige una opción.</div>
+                      </div>
+                    </div>
+
+                    <!-- Casillas -->
+                    <div class="col-12 col-md-6">
+                      <span class="form-label d-block">Servicios adicionales</span>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="srvChaleco" name="servicios" value="chaleco">
+                        <label class="form-check-label" for="srvChaleco">Alquiler de chaleco salvavidas</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="srvAlmuerzo" name="servicios" value="almuerzo">
+                        <label class="form-check-label" for="srvAlmuerzo">Almuerzo típico</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="checkbox" id="srvFoto" name="servicios" value="fotos">
+                        <label class="form-check-label" for="srvFoto">Fotografías del recorrido</label>
+                      </div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="comentarios" class="form-label">Comentarios o necesidades especiales</label>
+                      <textarea class="form-control" id="comentarios" name="comentarios" rows="4"
+                                maxlength="300" placeholder="Cuéntanos si viajas con niños, tienes alguna restricción alimentaria, etc."></textarea>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <!-- Aceptación -->
+                <div class="form-check mb-4">
+                  <input class="form-check-input" type="checkbox" id="terminos" required>
+                  <label class="form-check-label" for="terminos">
+                    Acepto las condiciones de seguridad y el tratamiento de mis datos personales. *
+                  </label>
+                  <div class="invalid-feedback">Debes aceptar las condiciones para continuar.</div>
+                </div>
+
+                <div class="d-grid gap-2 d-sm-flex align-items-center">
+                  <button type="submit" class="btn btn-rio">Reservar mi lugar</button>
+                  <button type="reset" class="btn btn-link btn-limpiar">Limpiar formulario</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== PIE DE PÁGINA ==================== -->
+  <footer class="site-footer py-4" id="contacto">
+    <div class="container">
+      <div class="row gy-3">
+        <div class="col-12 col-md-6">
+          <h3 class="h5 text-white">Ruta del Río</h3>
+          <p class="mb-0">Muelle principal, Magangué, Bolívar.</p>
+        </div>
+        <div class="col-12 col-md-6 text-md-end">
+          <p class="mb-1">Escríbenos: <a href="mailto:reservas@rutadelrio.example">reservas@rutadelrio.example</a></p>
+          <p class="mb-0 small">&copy; 2026 Ruta del Río. Actividad académica de HTML5 y Bootstrap.</p>
+          <p class="mb-0 small creditos">Creado por <strong>CIPA Los Ingenieros</strong></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODAL DE CONFIRMACIÓN ==================== -->
+  <div class="modal fade" id="modalExito" tabindex="-1" aria-labelledby="modalExitoTitulo" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 text-center p-3">
+        <div class="modal-body">
+          <div class="icono-exito mx-auto mb-3" aria-hidden="true">&#10003;</div>
+          <h2 class="h4" id="modalExitoTitulo">¡Reserva registrada con éxito!</h2>
+          <p class="mb-3">Gracias, <strong id="resNombre"></strong>. Tu lugar quedó reservado.</p>
+          <ul class="list-group text-start mb-3">
+            <li class="list-group-item"><strong>Recorrido:</strong> <span id="resRecorrido"></span></li>
+            <li class="list-group-item"><strong>Fecha:</strong> <span id="resFecha"></span></li>
+            <li class="list-group-item"><strong>Personas:</strong> <span id="resPersonas"></span></li>
+          </ul>
+          <p class="small mb-0">Enviaremos la confirmación a <strong id="resCorreo"></strong>.</p>
+        </div>
+        <div class="modal-footer border-0 justify-content-center">
+          <button type="button" class="btn btn-rio" data-bs-dismiss="modal">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/validacion.js"></script>
+</body>
+</html>

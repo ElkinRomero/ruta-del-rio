@@ -1,0 +1,110 @@
+/* ---------- Estilo personalizado ---------- */
+:root {
+  --rio-profundo: #0e3b43;
+  --rio-medio:    #1f7a80;
+  --rio-claro:    #e6f1f0;
+  --sol:          #f4b41a;
+  --barro:        #5b4636;
+  --blanco:       #ffffff;
+}
+body {
+  font-family: "Source Sans 3", system-ui, sans-serif;
+  background: var(--rio-claro);
+  color: var(--barro);
+}
+h1, h2, h3, .navbar-brand {
+  font-family: "Bricolage Grotesque", system-ui, sans-serif;
+  color: var(--rio-profundo);
+}
+
+/* Encabezado */
+.site-header { background: var(--rio-profundo); }
+.site-header .navbar-brand { color: var(--blanco); font-weight: 800; letter-spacing: .01em; }
+.site-header .nav-link { color: #cfe3e1; }
+.site-header .nav-link:hover,
+.site-header .nav-link:focus { color: var(--sol); }
+
+/* Portada: el titular dibuja la corriente del río */
+.hero {
+  background: var(--rio-profundo);
+  color: var(--blanco);
+  padding: 3.5rem 0 5.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.hero h1 {
+  color: var(--blanco);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.05;
+  max-width: 14ch;
+}
+.hero p { color: #cfe3e1; max-width: 46ch; font-size: 1.15rem; }
+.hero svg { position: absolute; left: 0; bottom: -1px; width: 100%; height: 70px; }
+
+/* Tarjeta del formulario */
+.form-card {
+  background: var(--blanco);
+  border: 0;
+  border-radius: 1.25rem;
+  box-shadow: 0 18px 40px -20px rgba(14, 59, 67, .45);
+  margin-top: -4rem;
+  position: relative;
+}
+fieldset legend {
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: var(--rio-medio);
+  border-bottom: 2px solid var(--sol);
+  padding-bottom: .35rem;
+  margin-bottom: 1.1rem;
+  width: 100%;
+}
+.form-label { font-weight: 600; color: var(--rio-profundo); }
+.form-control, .form-select {
+  border-color: #b9d2d0;
+  padding: .65rem .85rem;
+}
+.form-control:focus, .form-select:focus,
+.form-check-input:focus {
+  border-color: var(--rio-medio);
+  box-shadow: 0 0 0 .25rem rgba(31, 122, 128, .25);
+}
+.form-check-input:checked {
+  background-color: var(--rio-medio);
+  border-color: var(--rio-medio);
+}
+.btn-rio {
+  background: var(--sol);
+  color: var(--rio-profundo);
+  font-weight: 600;
+  border: 0;
+  padding: .8rem 1.8rem;
+  border-radius: .75rem;
+}
+.btn-rio:hover, .btn-rio:focus { background: #ffc94a; color: var(--rio-profundo); }
+.btn-limpiar { color: var(--rio-medio); font-weight: 600; }
+
+/* Rango de personas */
+#personasValor {
+  background: var(--rio-profundo); color: var(--blanco);
+  border-radius: 999px; padding: .1rem .75rem; font-weight: 600;
+}
+
+/* Pie de página */
+.site-footer { background: var(--rio-profundo); color: #cfe3e1; margin-top: 4rem; }
+.site-footer a { color: var(--sol); text-decoration: none; }
+.site-footer a:hover { text-decoration: underline; }
+
+/* Modal de confirmación */
+.icono-exito {
+  width: 72px; height: 72px; border-radius: 50%;
+  background: var(--rio-medio); color: var(--blanco);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 2.4rem; font-weight: 800;
+}
+#modalExito .modal-content { border-radius: 1.25rem; }
+
+/* Créditos */
+.creditos strong { color: var(--sol); }
